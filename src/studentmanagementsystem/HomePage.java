@@ -126,7 +126,8 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGradeManagementActionPerformed
 
     private void btnReportGeneratorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportGeneratorActionPerformed
-        // TODO add your handling code here:
+        new ReportModeForm().setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_btnReportGeneratorActionPerformed
 
     /**
