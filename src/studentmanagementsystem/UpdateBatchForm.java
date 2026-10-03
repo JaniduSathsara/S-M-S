@@ -30,15 +30,15 @@ public class UpdateBatchForm extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         btnSearch = new javax.swing.JButton();
-        txtUpdateDetails = new javax.swing.JTextField();
-        lblStuName = new javax.swing.JLabel();
-        txtStuName = new javax.swing.JTextField();
+        txtBatchNumber = new javax.swing.JTextField();
+        lblStuCount = new javax.swing.JLabel();
+        txtStuCount = new javax.swing.JTextField();
         btnCancle = new javax.swing.JButton();
-        btnUpdateStudent = new javax.swing.JButton();
+        btnUpdateBatch = new javax.swing.JButton();
         btnBackToHome = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        rbtnENclose = new javax.swing.JRadioButton();
+        rbtnENopen = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,18 +50,18 @@ public class UpdateBatchForm extends javax.swing.JFrame {
         btnSearch.setText("Search");
         btnSearch.addActionListener(this::btnSearchActionPerformed);
 
-        lblStuName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblStuName.setText("Student Count");
+        lblStuCount.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblStuCount.setText("Student Count");
 
-        txtStuName.addActionListener(this::txtStuNameActionPerformed);
+        txtStuCount.addActionListener(this::txtStuCountActionPerformed);
 
         btnCancle.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         btnCancle.setText("Cancle");
         btnCancle.addActionListener(this::btnCancleActionPerformed);
 
-        btnUpdateStudent.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        btnUpdateStudent.setText("Update Student");
-        btnUpdateStudent.addActionListener(this::btnUpdateStudentActionPerformed);
+        btnUpdateBatch.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        btnUpdateBatch.setText("Update Batch");
+        btnUpdateBatch.addActionListener(this::btnUpdateBatchActionPerformed);
 
         btnBackToHome.setFont(new java.awt.Font("sansserif", 1, 36)); // NOI18N
         btnBackToHome.setText("←");
@@ -71,13 +71,13 @@ public class UpdateBatchForm extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText(" iCET - Institute of Computer Engineering Technology");
 
-        jRadioButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jRadioButton2.setText("Enrollment CLOSE");
-        jRadioButton2.addActionListener(this::jRadioButton2ActionPerformed);
+        rbtnENclose.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        rbtnENclose.setText("Enrollment CLOSE");
+        rbtnENclose.addActionListener(this::rbtnENcloseActionPerformed);
 
-        jRadioButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jRadioButton3.setText("Enrollment OPEN");
-        jRadioButton3.addActionListener(this::jRadioButton3ActionPerformed);
+        rbtnENopen.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        rbtnENopen.setText("Enrollment OPEN");
+        rbtnENopen.addActionListener(this::rbtnENopenActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,19 +87,6 @@ public class UpdateBatchForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(49, 49, 49)
-                                .addComponent(lblStuName)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtStuName, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addComponent(btnSearch)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtUpdateDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,12 +98,24 @@ public class UpdateBatchForm extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jRadioButton3)
+                                .addComponent(rbtnENopen)
                                 .addGap(29, 29, 29)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnUpdateStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton2))
-                        .addGap(28, 28, 28)))
+                            .addComponent(btnUpdateBatch, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rbtnENclose))
+                        .addGap(28, 28, 28))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblStuCount)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtStuCount, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnSearch)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtBatchNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -126,20 +125,20 @@ public class UpdateBatchForm extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtUpdateDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBatchNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch))
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblStuName)
-                    .addComponent(txtStuName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                    .addComponent(lblStuCount)
+                    .addComponent(txtStuCount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton2))
+                    .addComponent(rbtnENopen)
+                    .addComponent(rbtnENclose))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnUpdateStudent)
+                        .addComponent(btnUpdateBatch)
                         .addComponent(btnCancle))
                     .addComponent(btnBackToHome, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -148,37 +147,38 @@ public class UpdateBatchForm extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         
     }//GEN-LAST:event_btnSearchActionPerformed
 
-    private void txtStuNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStuNameActionPerformed
+    private void txtStuCountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStuCountActionPerformed
 
-    }//GEN-LAST:event_txtStuNameActionPerformed
+    }//GEN-LAST:event_txtStuCountActionPerformed
 
     private void btnCancleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancleActionPerformed
 
     }//GEN-LAST:event_btnCancleActionPerformed
 
-    private void btnUpdateStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateStudentActionPerformed
+    private void btnUpdateBatchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateBatchActionPerformed
     
         
-    }//GEN-LAST:event_btnUpdateStudentActionPerformed
+    }//GEN-LAST:event_btnUpdateBatchActionPerformed
 
     private void btnBackToHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackToHomeActionPerformed
         new BtachMode().setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_btnBackToHomeActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void rbtnENcloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnENcloseActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_rbtnENcloseActionPerformed
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+    private void rbtnENopenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnENopenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+    }//GEN-LAST:event_rbtnENopenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,13 +209,13 @@ public class UpdateBatchForm extends javax.swing.JFrame {
     private javax.swing.JButton btnBackToHome;
     private javax.swing.JButton btnCancle;
     private javax.swing.JButton btnSearch;
-    private javax.swing.JButton btnUpdateStudent;
+    private javax.swing.JButton btnUpdateBatch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JLabel lblStuName;
-    private javax.swing.JTextField txtStuName;
-    private javax.swing.JTextField txtUpdateDetails;
+    private javax.swing.JLabel lblStuCount;
+    private javax.swing.JRadioButton rbtnENclose;
+    private javax.swing.JRadioButton rbtnENopen;
+    private javax.swing.JTextField txtBatchNumber;
+    private javax.swing.JTextField txtStuCount;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,14 +8,14 @@ package studentmanagementsystem;
  *
  * @author Janidu
  */
-public class BtachMode extends javax.swing.JFrame {
+public class GradeManagementModeForm extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BtachMode.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GradeManagementModeForm.class.getName());
 
     /**
-     * Creates new form HomePage
+     * Creates new form GradeManagementModeForm
      */
-    public BtachMode() {
+    public GradeManagementModeForm() {
         initComponents();
     }
 
@@ -29,9 +29,8 @@ public class BtachMode extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        btnAddBatch = new javax.swing.JButton();
-        btnUpdateBatch = new javax.swing.JButton();
-        btnViewBatch = new javax.swing.JButton();
+        btnPrfMarksUpdate = new javax.swing.JButton();
+        btnDbmsMarksUpdate = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
 
@@ -39,19 +38,15 @@ public class BtachMode extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Batch Management ");
+        jLabel1.setText("Grade  Management ");
 
-        btnAddBatch.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        btnAddBatch.setText("Add Batch");
-        btnAddBatch.addActionListener(this::btnAddBatchActionPerformed);
+        btnPrfMarksUpdate.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btnPrfMarksUpdate.setText("PRF Marks Update");
+        btnPrfMarksUpdate.addActionListener(this::btnPrfMarksUpdateActionPerformed);
 
-        btnUpdateBatch.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        btnUpdateBatch.setText("Update Batch");
-        btnUpdateBatch.addActionListener(this::btnUpdateBatchActionPerformed);
-
-        btnViewBatch.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        btnViewBatch.setText("View Batch");
-        btnViewBatch.addActionListener(this::btnViewBatchActionPerformed);
+        btnDbmsMarksUpdate.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btnDbmsMarksUpdate.setText("DBMS Marks Update");
+        btnDbmsMarksUpdate.addActionListener(this::btnDbmsMarksUpdateActionPerformed);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -66,28 +61,23 @@ public class BtachMode extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(51, 51, 51)
-                                .addComponent(btnAddBatch, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(51, 51, 51)
-                                .addComponent(btnUpdateBatch, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(51, 51, 51)
-                                .addComponent(btnViewBatch, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 8, Short.MAX_VALUE))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 8, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnPrfMarksUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnDbmsMarksUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap())
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(32, 32, 32)
                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,14 +85,12 @@ public class BtachMode extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(btnAddBatch)
-                .addGap(40, 40, 40)
-                .addComponent(btnUpdateBatch)
-                .addGap(45, 45, 45)
-                .addComponent(btnViewBatch)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(btnPrfMarksUpdate)
+                .addGap(34, 34, 34)
+                .addComponent(btnDbmsMarksUpdate)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addContainerGap())
         );
@@ -111,20 +99,15 @@ public class BtachMode extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddBatchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddBatchActionPerformed
-        new AddBatchForm().setVisible(true);
-        setVisible(false);
-    }//GEN-LAST:event_btnAddBatchActionPerformed
+    private void btnPrfMarksUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrfMarksUpdateActionPerformed
+        new AddStuForm().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnPrfMarksUpdateActionPerformed
 
-    private void btnUpdateBatchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateBatchActionPerformed
-       new UpdateBatchForm().setVisible(true);
+    private void btnDbmsMarksUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDbmsMarksUpdateActionPerformed
+        new UpdateStuForn().setVisible(true);
         setVisible(false);
-    }//GEN-LAST:event_btnUpdateBatchActionPerformed
-
-    private void btnViewBatchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewBatchActionPerformed
-        new ViewBatchForm().setVisible(true);
-        setVisible(false);
-    }//GEN-LAST:event_btnViewBatchActionPerformed
+    }//GEN-LAST:event_btnDbmsMarksUpdateActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         new HomePage().setVisible(true);
@@ -153,14 +136,13 @@ public class BtachMode extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new BtachMode().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new GradeManagementModeForm().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddBatch;
     private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnUpdateBatch;
-    private javax.swing.JButton btnViewBatch;
+    private javax.swing.JButton btnDbmsMarksUpdate;
+    private javax.swing.JButton btnPrfMarksUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
