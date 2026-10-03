@@ -28,21 +28,157 @@ public class UpdateBatchForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        btnSearch = new javax.swing.JButton();
+        txtUpdateDetails = new javax.swing.JTextField();
+        lblStuName = new javax.swing.JLabel();
+        txtStuName = new javax.swing.JTextField();
+        btnCancle = new javax.swing.JButton();
+        btnUpdateStudent = new javax.swing.JButton();
+        btnBackToHome = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Update Batch");
+
+        btnSearch.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSearch.setText("Search");
+        btnSearch.addActionListener(this::btnSearchActionPerformed);
+
+        lblStuName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblStuName.setText("Student Count");
+
+        txtStuName.addActionListener(this::txtStuNameActionPerformed);
+
+        btnCancle.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        btnCancle.setText("Cancle");
+        btnCancle.addActionListener(this::btnCancleActionPerformed);
+
+        btnUpdateStudent.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        btnUpdateStudent.setText("Update Student");
+        btnUpdateStudent.addActionListener(this::btnUpdateStudentActionPerformed);
+
+        btnBackToHome.setFont(new java.awt.Font("sansserif", 1, 36)); // NOI18N
+        btnBackToHome.setText("←");
+        btnBackToHome.addActionListener(this::btnBackToHomeActionPerformed);
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText(" iCET - Institute of Computer Engineering Technology");
+
+        jRadioButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jRadioButton2.setText("Enrollment CLOSE");
+        jRadioButton2.addActionListener(this::jRadioButton2ActionPerformed);
+
+        jRadioButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jRadioButton3.setText("Enrollment OPEN");
+        jRadioButton3.addActionListener(this::jRadioButton3ActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(49, 49, 49)
+                                .addComponent(lblStuName)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtStuName, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addComponent(btnSearch)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtUpdateDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(btnBackToHome, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                                .addComponent(btnCancle)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jRadioButton3)
+                                .addGap(29, 29, 29)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnUpdateStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jRadioButton2))
+                        .addGap(28, 28, 28)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtUpdateDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearch))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblStuName)
+                    .addComponent(txtStuName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton3)
+                    .addComponent(jRadioButton2))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnUpdateStudent)
+                        .addComponent(btnCancle))
+                    .addComponent(btnBackToHome, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        
+    }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void txtStuNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStuNameActionPerformed
+
+    }//GEN-LAST:event_txtStuNameActionPerformed
+
+    private void btnCancleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancleActionPerformed
+
+    }//GEN-LAST:event_btnCancleActionPerformed
+
+    private void btnUpdateStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateStudentActionPerformed
+    
+        
+    }//GEN-LAST:event_btnUpdateStudentActionPerformed
+
+    private void btnBackToHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackToHomeActionPerformed
+        new BtachMode().setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_btnBackToHomeActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +206,16 @@ public class UpdateBatchForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBackToHome;
+    private javax.swing.JButton btnCancle;
+    private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnUpdateStudent;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JLabel lblStuName;
+    private javax.swing.JTextField txtStuName;
+    private javax.swing.JTextField txtUpdateDetails;
     // End of variables declaration//GEN-END:variables
 }
