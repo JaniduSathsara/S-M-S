@@ -100,13 +100,11 @@ public class GradeManagementModeForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPrfMarksUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrfMarksUpdateActionPerformed
-        new AddStuForm().setVisible(true);
-        this.setVisible(false);
+        
     }//GEN-LAST:event_btnPrfMarksUpdateActionPerformed
 
     private void btnDbmsMarksUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDbmsMarksUpdateActionPerformed
-        new UpdateStuForn().setVisible(true);
-        setVisible(false);
+       
     }//GEN-LAST:event_btnDbmsMarksUpdateActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
