@@ -33,7 +33,7 @@ public class BatchWiseReportForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btnBackToHome = new javax.swing.JButton();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        comboSelectBatch = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -57,8 +57,8 @@ public class BatchWiseReportForm extends javax.swing.JFrame {
         btnBackToHome.setText("←");
         btnBackToHome.addActionListener(this::btnBackToHomeActionPerformed);
 
-        jComboBox2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "105 Batch", "106 Batch", "107 Batch", "108 Batch", "109 Batch", "110 Batch" }));
+        comboSelectBatch.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        comboSelectBatch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "105 Batch", "106 Batch", "107 Batch", "108 Batch", "109 Batch", "110 Batch" }));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("Select Batch To view Report");
@@ -74,7 +74,7 @@ public class BatchWiseReportForm extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(comboSelectBatch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -91,7 +91,7 @@ public class BatchWiseReportForm extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboSelectBatch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
                 .addComponent(btnBackToHome, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -135,7 +135,7 @@ public class BatchWiseReportForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBackToHome;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> comboSelectBatch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

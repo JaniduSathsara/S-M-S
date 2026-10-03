@@ -88,6 +88,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Student Registration Report"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStuReReportActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnBatchReport">
       <Properties>
@@ -96,6 +99,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Batch - wise Student Report"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBatchReportActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnIndstryReport">
       <Properties>
@@ -104,6 +110,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Industry Training Eligibilty Report"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIndstryReportActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>

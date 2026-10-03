@@ -46,12 +46,15 @@ public class ReportModeForm extends javax.swing.JFrame {
 
         btnStuReReport.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnStuReReport.setText("Student Registration Report");
+        btnStuReReport.addActionListener(this::btnStuReReportActionPerformed);
 
         btnBatchReport.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBatchReport.setText("Batch - wise Student Report");
+        btnBatchReport.addActionListener(this::btnBatchReportActionPerformed);
 
         btnIndstryReport.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnIndstryReport.setText("Industry Training Eligibilty Report");
+        btnIndstryReport.addActionListener(this::btnIndstryReportActionPerformed);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -107,6 +110,21 @@ public class ReportModeForm extends javax.swing.JFrame {
         new HomePage().setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_btnBackToHomeActionPerformed
+
+    private void btnBatchReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatchReportActionPerformed
+        new BatchWiseReportForm().setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_btnBatchReportActionPerformed
+
+    private void btnStuReReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStuReReportActionPerformed
+        new StuRegistrationReportForm().setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_btnStuReReportActionPerformed
+
+    private void btnIndstryReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIndstryReportActionPerformed
+        new IndustryTraningReportForm().setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_btnIndstryReportActionPerformed
 
     /**
      * @param args the command line arguments
