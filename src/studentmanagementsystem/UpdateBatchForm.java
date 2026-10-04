@@ -4,6 +4,8 @@
  */
 package studentmanagementsystem;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Janidu
@@ -151,7 +153,23 @@ public class UpdateBatchForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        int batchNumber = Integer.parseInt(txtBatchNumber.getText());
+        boolean isFound = false;
         
+        for (Batch batchArray : BatchCollection.batchArray) {
+            if (batchArray !=null && batchArray.batchNum == (batchNumber)){ 
+                isFound =true;
+                break;
+            }
+        }
+        if (isFound){
+            
+            // LOGIC TXT FEILDGMFD
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "Enter Valid Batch Number to Update");
+        }
+             
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void txtStuCountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStuCountActionPerformed
@@ -173,11 +191,11 @@ public class UpdateBatchForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackToHomeActionPerformed
 
     private void rbtnENcloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnENcloseActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_rbtnENcloseActionPerformed
 
     private void rbtnENopenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnENopenActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_rbtnENopenActionPerformed
 
     /**

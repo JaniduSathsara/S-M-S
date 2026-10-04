@@ -148,7 +148,7 @@ public class AddBatchForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void txtCheckBatchNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCheckBatchNumActionPerformed
-        String batchNum = txtCheckBatchNum.getText();
+        int batchNum = Integer.parseInt(txtCheckBatchNum.getText());
     }//GEN-LAST:event_txtCheckBatchNumActionPerformed
 
     /**
