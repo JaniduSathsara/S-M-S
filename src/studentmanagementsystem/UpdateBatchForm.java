@@ -163,7 +163,16 @@ public class UpdateBatchForm extends javax.swing.JFrame {
             }
         }
         if (isFound){
-            txtStuCount.setText("25");    
+            txtStuCount.setText("25"); 
+            for (Batch batch : BatchCollection.batchArray) {
+                if (batch.batchStatus == 1) {
+                    rbtnENopen.setSelected(true);
+                    rbtnENclose.setSelected(false);
+                }else if (batch.batchStatus == 0) {
+                    rbtnENclose.setSelected(true);
+                    rbtnENopen.setSelected(false);
+                }
+            }
         }else{
             JOptionPane.showMessageDialog(null, "Enter Valid Batch Number to Update");
         }
@@ -181,7 +190,8 @@ public class UpdateBatchForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancleActionPerformed
 
     private void btnUpdateBatchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateBatchActionPerformed
-    
+        int batchNumber = Integer.parseInt(txtBatchNumber.getText());
+        JOptionPane.showMessageDialog(null, batchNumber+" Batch Status Successfully updated");
         
     }//GEN-LAST:event_btnUpdateBatchActionPerformed
 

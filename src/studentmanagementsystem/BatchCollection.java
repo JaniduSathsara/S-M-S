@@ -10,10 +10,10 @@ package studentmanagementsystem;
  */
 public class BatchCollection {
     static Batch [] batchArray = new Batch[]{
-		
-        new Batch(105,0),
-        new Batch(106,0),
-        new Batch(110,1),
-        new Batch(111,1)
+        new Batch(106, 0),
+        new Batch(107, 0),
+        new Batch(108, 0),
+        new Batch(109, 1),
+        new Batch(110, 1)
     };
 }
