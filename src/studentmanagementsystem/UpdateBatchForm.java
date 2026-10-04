@@ -163,9 +163,7 @@ public class UpdateBatchForm extends javax.swing.JFrame {
             }
         }
         if (isFound){
-            
-            // LOGIC TXT FEILDGMFD
-            
+            txtStuCount.setText("25");    
         }else{
             JOptionPane.showMessageDialog(null, "Enter Valid Batch Number to Update");
         }
@@ -177,7 +175,9 @@ public class UpdateBatchForm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtStuCountActionPerformed
 
     private void btnCancleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancleActionPerformed
-
+        txtStuCount.setText(null);  
+        rbtnENclose.setSelected(false);
+        rbtnENopen.setSelected(false);
     }//GEN-LAST:event_btnCancleActionPerformed
 
     private void btnUpdateBatchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateBatchActionPerformed
@@ -191,11 +191,15 @@ public class UpdateBatchForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackToHomeActionPerformed
 
     private void rbtnENcloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnENcloseActionPerformed
-        
+        rbtnENclose.setSelected(true);
+        rbtnENopen.setSelected(false);
+
+        //System.out.println("btn work");
     }//GEN-LAST:event_rbtnENcloseActionPerformed
 
     private void rbtnENopenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnENopenActionPerformed
-        
+        rbtnENopen.setSelected(true);
+        rbtnENclose.setSelected(false);
     }//GEN-LAST:event_rbtnENopenActionPerformed
 
     /**
