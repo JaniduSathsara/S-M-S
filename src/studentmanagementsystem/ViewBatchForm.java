@@ -4,6 +4,9 @@
  */
 package studentmanagementsystem;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Janidu
@@ -30,7 +33,6 @@ public class ViewBatchForm extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         btnSearch = new javax.swing.JButton();
-        txtBatchNum = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblBatchDeatails = new javax.swing.JTable();
         btnBack = new javax.swing.JButton();
@@ -46,28 +48,26 @@ public class ViewBatchForm extends javax.swing.JFrame {
         btnSearch.setText("Search");
         btnSearch.addActionListener(this::btnSearchActionPerformed);
 
-        txtBatchNum.addActionListener(this::txtBatchNumActionPerformed);
-
-        tblBatchDeatails.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tblBatchDeatails.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        tblBatchDeatails.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         tblBatchDeatails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "BatchNum", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
+        tblBatchDeatails.setAlignmentX(0.1F);
+        tblBatchDeatails.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         jScrollPane1.setViewportView(tblBatchDeatails);
 
         btnBack.setFont(new java.awt.Font("sansserif", 1, 36)); // NOI18N
@@ -86,35 +86,30 @@ public class ViewBatchForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addComponent(btnSearch)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtBatchNum, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(14, 14, 14)
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(btnSearch)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSearch)
-                    .addComponent(txtBatchNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
+                .addGap(28, 28, 28)
+                .addComponent(btnSearch)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
@@ -126,17 +121,22 @@ public class ViewBatchForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        int batchNum = Integer.parseInt(txtBatchNum.getText());
-        for (Batch batchArray : BatchCollection.batchArray) {
-            if (BatchCollection.batchArray .equals (batchNum)) {
-                
+   
+        DefaultTableModel dtm=(DefaultTableModel)tblBatchDeatails.getModel();
+        dtm.setRowCount(0);
+        for (Batch batch : BatchCollection.batchArray) {
+            String status;
+            if (batch.getBatchStatus() == 1) {
+                status = "Enrollment Open";
+            } else {
+                status = "Enrollment Closed";
             }
-        }
-    }//GEN-LAST:event_btnSearchActionPerformed
 
-    private void txtBatchNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBatchNumActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBatchNumActionPerformed
+            Object[] rowData =new Object[]{batch.getBatchNum(),status};
+            dtm.addRow(rowData);
+        }
+        
+    }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         new BtachMode().setVisible(true);
@@ -175,6 +175,5 @@ public class ViewBatchForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblBatchDeatails;
-    private javax.swing.JTextField txtBatchNum;
     // End of variables declaration//GEN-END:variables
 }

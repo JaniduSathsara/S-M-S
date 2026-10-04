@@ -157,11 +157,11 @@ public class UpdateStuForn extends javax.swing.JFrame {
         String userInputRegID = txtUpdateDetails.getText();
 
         for (Students studentsArray : StudentCollection.studentsArray) {
-            if (studentsArray.studentId.equals(userInputRegID)){
+            if (studentsArray.getStudentId().equals(userInputRegID)){
                 studentsArray.setStuName(txtStuName.getText());
                 studentsArray.setStuNic(txtStuNic.getText());
                 
-                JOptionPane.showMessageDialog(null, "Successfully Updated "+studentsArray.studentId);
+                JOptionPane.showMessageDialog(null, "Successfully Updated "+studentsArray.getStudentId());
                 break;
             }
         }
@@ -175,7 +175,7 @@ public class UpdateStuForn extends javax.swing.JFrame {
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         String userInputRegID = txtUpdateDetails.getText();
         for (Students studentsArray : StudentCollection.studentsArray) {
-            if (studentsArray.studentId .equals (userInputRegID)) {
+            if (studentsArray.getStudentId() .equals (userInputRegID)) {
                 txtStuName.setText(studentsArray.getStuName());
                 txtStuNic.setText(studentsArray.getStuNic());
                 break;

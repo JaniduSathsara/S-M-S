@@ -157,7 +157,7 @@ public class UpdateBatchForm extends javax.swing.JFrame {
         boolean isFound = false;
         
         for (Batch batchArray : BatchCollection.batchArray) {
-            if (batchArray !=null && batchArray.batchNum == (batchNumber)){ 
+            if (batchArray !=null && batchArray.getBatchNum() == (batchNumber)){ 
                 isFound =true;
                 break;
             }
@@ -165,16 +165,21 @@ public class UpdateBatchForm extends javax.swing.JFrame {
         if (isFound){
             txtStuCount.setText("25"); 
             for (Batch batch : BatchCollection.batchArray) {
-                if (batch.batchStatus == 1) {
-                    rbtnENopen.setSelected(true);
-                    rbtnENclose.setSelected(false);
-                }else if (batch.batchStatus == 0) {
-                    rbtnENclose.setSelected(true);
-                    rbtnENopen.setSelected(false);
+                if (batch.getBatchNum()== Integer.parseInt(txtBatchNumber.getText())) {
+                    if (batch.getBatchStatus() == 1) {
+                        rbtnENopen.setSelected(true);
+                        rbtnENclose.setSelected(false);
+                        //System.out.println("if eka wada");
+                    } else {
+                        rbtnENopen.setSelected(false);
+                        rbtnENclose.setSelected(true);
+                    }
+                    break;
                 }
             }
         }else{
             JOptionPane.showMessageDialog(null, "Enter Valid Batch Number to Update");
+            txtBatchNumber.setText(null);
         }
              
     }//GEN-LAST:event_btnSearchActionPerformed
@@ -191,6 +196,16 @@ public class UpdateBatchForm extends javax.swing.JFrame {
 
     private void btnUpdateBatchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateBatchActionPerformed
         int batchNumber = Integer.parseInt(txtBatchNumber.getText());
+            if (rbtnENopen.isSelected()) {
+                rbtnENclose.setSelected(true);
+                rbtnENopen.setSelected(false);
+                //System.out.println("done");
+            } else {
+                //System.out.println("else done");
+                rbtnENopen.setSelected(true);
+                rbtnENclose.setSelected(false);
+            }
+        BatchCollection.extendBatchArray();
         JOptionPane.showMessageDialog(null, batchNumber+" Batch Status Successfully updated");
         
     }//GEN-LAST:event_btnUpdateBatchActionPerformed

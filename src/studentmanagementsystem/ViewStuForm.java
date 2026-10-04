@@ -204,7 +204,7 @@ public class ViewStuForm extends javax.swing.JFrame {
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         String userInputRegID = txtStudentID.getText();
         for (Students studentsArray : StudentCollection.studentsArray) {
-            if (studentsArray.studentId .equals (userInputRegID)) {
+            if (studentsArray.getStudentId() .equals (userInputRegID)) {
                 txtStuName.setText(studentsArray.getStuName());
                 txtNicNum.setText(studentsArray.getStuNic());
                 txtPrfMarks.setText(String.valueOf(studentsArray.getPrfMarks()));

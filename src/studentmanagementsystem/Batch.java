@@ -10,8 +10,8 @@ package studentmanagementsystem;
  */
 public class Batch {
     
-    int batchNum;
-    int batchStatus;
+    private int batchNum;
+    private int batchStatus;
 	
     public  Batch(int batchNum,int batchStatus){
             this.batchNum = batchNum;

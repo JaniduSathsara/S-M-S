@@ -16,4 +16,12 @@ public class BatchCollection {
         new Batch(109, 1),
         new Batch(110, 1)
     };
+    
+    public static void extendBatchArray() {
+        Batch [] tempBatchArray = new Batch[BatchCollection.batchArray.length+1];
+        for (int i = 0; i < BatchCollection.batchArray.length; i++) {
+            tempBatchArray[i] = BatchCollection.batchArray[i];
+        }
+        BatchCollection.batchArray = tempBatchArray;
+    }  
 }

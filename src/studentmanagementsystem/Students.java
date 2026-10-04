@@ -9,7 +9,7 @@ package studentmanagementsystem;
  * @author Janidu
  */
 public class Students {
-    String studentId;
+    private String studentId;
     private String stuNic;
     private String StuName;
     private int dbmsMarks;

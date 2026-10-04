@@ -120,7 +120,7 @@ public class AddBatchForm extends javax.swing.JFrame {
         boolean isFound = false;
         
         for (Batch batchArray : BatchCollection.batchArray) {
-            if (batchArray !=null && batchArray.batchNum == (batchNumber)){ 
+            if (batchArray !=null && batchArray.getBatchNum() == (batchNumber)){ 
                 isFound =true;
                 break;
             }
@@ -134,7 +134,7 @@ public class AddBatchForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnAddBatchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddBatchActionPerformed
-        extendBatchArray();
+        BatchCollection.extendBatchArray();
         JOptionPane.showMessageDialog(null,"Batch is Added To the System Sucessfully");
     }//GEN-LAST:event_btnAddBatchActionPerformed
 
@@ -186,11 +186,5 @@ public class AddBatchForm extends javax.swing.JFrame {
     private javax.swing.JTextField txtCheckBatchNum;
     // End of variables declaration//GEN-END:variables
 
-    private void extendBatchArray() {
-        Batch [] tempBatchArray = new Batch[BatchCollection.batchArray.length+1];
-        for (int i = 0; i < BatchCollection.batchArray.length; i++) {
-            tempBatchArray[i] = BatchCollection.batchArray[i];
-        }
-        BatchCollection.batchArray = tempBatchArray;
-    }   
+    
 }

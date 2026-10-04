@@ -198,7 +198,7 @@ public class DeleteStuForm extends javax.swing.JFrame {
 
         String userInputRegID = txtStudentID.getText();
         for (Students student : StudentCollection.studentsArray) {
-            if (student != null && student.studentId.equals(userInputRegID)) {
+            if (student != null && student.getStudentId().equals(userInputRegID)) {
                 int index = java.util.Arrays.asList(StudentCollection.studentsArray).indexOf(student);
                 StudentCollection.studentsArray[index] = null;
                 JOptionPane.showMessageDialog(null,"Successfully Deleted " + userInputRegID);
@@ -223,7 +223,7 @@ public class DeleteStuForm extends javax.swing.JFrame {
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         String userInputRegID = txtStudentID.getText();
         for (Students studentsArray : StudentCollection.studentsArray) {
-            if (studentsArray.studentId .equals (userInputRegID)) {
+            if (studentsArray.getStudentId() .equals (userInputRegID)) {
                 txtStuName.setText(studentsArray.getStuName());
                 txtNicNum.setText(studentsArray.getStuNic());
                 txtPrfMarks.setText(String.valueOf(studentsArray.getPrfMarks()));
