@@ -4,6 +4,8 @@
  */
 package studentmanagementsystem;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Janidu
@@ -31,6 +33,16 @@ public class PrfMarkUpdateForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
+        txtStudentID = new javax.swing.JTextField();
+        txtStuName = new javax.swing.JTextField();
+        lblStuName = new javax.swing.JLabel();
+        lblNicNum = new javax.swing.JLabel();
+        lblPrfMarks = new javax.swing.JLabel();
+        txtPrfMarks = new javax.swing.JTextField();
+        txtNicNum = new javax.swing.JTextField();
+        lblNewPrfMarks = new javax.swing.JLabel();
+        txtNewPrfMarks = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,6 +58,30 @@ public class PrfMarkUpdateForm extends javax.swing.JFrame {
         btnBack.setText("←");
         btnBack.addActionListener(this::btnBackActionPerformed);
 
+        btnSearch.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        btnSearch.setText("Search");
+        btnSearch.addActionListener(this::btnSearchActionPerformed);
+
+        txtStudentID.addActionListener(this::txtStudentIDActionPerformed);
+
+        lblStuName.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblStuName.setText("Name");
+
+        lblNicNum.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblNicNum.setText("NIC Number");
+
+        lblPrfMarks.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblPrfMarks.setText("PRF Marks");
+
+        txtPrfMarks.addActionListener(this::txtPrfMarksActionPerformed);
+
+        txtNicNum.addActionListener(this::txtNicNumActionPerformed);
+
+        lblNewPrfMarks.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblNewPrfMarks.setText("Enter New PRF Marks");
+
+        txtNewPrfMarks.addActionListener(this::txtNewPrfMarksActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -59,8 +95,30 @@ public class PrfMarkUpdateForm extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 8, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(8, 8, 8)
+                                                .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(lblNicNum, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblStuName, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblPrfMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblNewPrfMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(txtStuName, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(txtStudentID, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(txtNicNum, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(39, 39, 39)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(txtPrfMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(txtNewPrfMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 6, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -68,7 +126,27 @@ public class PrfMarkUpdateForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSearch)
+                    .addComponent(txtStudentID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtStuName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblStuName))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNicNum)
+                    .addComponent(txtNicNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblPrfMarks)
+                    .addComponent(txtPrfMarks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNewPrfMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNewPrfMarks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
@@ -76,12 +154,45 @@ public class PrfMarkUpdateForm extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        new HomePage().setVisible(true);
+        new GradeManagementModeForm().setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        String userInputRegID = txtStudentID.getText();
+        for (Students studentsArray : StudentCollection.studentsArray) {
+            if (studentsArray.getStudentId() .equals (userInputRegID)) {
+                txtStuName.setText(studentsArray.getStuName());
+                txtNicNum.setText(studentsArray.getStuNic());
+                txtPrfMarks.setText(String.valueOf(studentsArray.getPrfMarks()));
+
+                break;
+            }else{
+                JOptionPane.showMessageDialog(null, "Invaild Student ID");
+            }
+            break;
+        }
+    }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void txtStudentIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStudentIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtStudentIDActionPerformed
+
+    private void txtPrfMarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrfMarksActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrfMarksActionPerformed
+
+    private void txtNicNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNicNumActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNicNumActionPerformed
+
+    private void txtNewPrfMarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNewPrfMarksActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNewPrfMarksActionPerformed
 
     /**
      * @param args the command line arguments
@@ -110,7 +221,17 @@ public class PrfMarkUpdateForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblNewPrfMarks;
+    private javax.swing.JLabel lblNicNum;
+    private javax.swing.JLabel lblPrfMarks;
+    private javax.swing.JLabel lblStuName;
+    private javax.swing.JTextField txtNewPrfMarks;
+    private javax.swing.JTextField txtNicNum;
+    private javax.swing.JTextField txtPrfMarks;
+    private javax.swing.JTextField txtStuName;
+    private javax.swing.JTextField txtStudentID;
     // End of variables declaration//GEN-END:variables
 }

@@ -84,9 +84,9 @@ public class GradeManagementModeForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(31, 31, 31)
                 .addComponent(btnPrfMarksUpdate)
-                .addGap(34, 34, 34)
+                .addGap(37, 37, 37)
                 .addComponent(btnDbmsMarksUpdate)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -100,7 +100,8 @@ public class GradeManagementModeForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPrfMarksUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrfMarksUpdateActionPerformed
-        
+        new PrfMarkUpdateForm().setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_btnPrfMarksUpdateActionPerformed
 
     private void btnDbmsMarksUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDbmsMarksUpdateActionPerformed
