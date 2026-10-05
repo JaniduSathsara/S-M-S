@@ -40,7 +40,6 @@
                                               <Component id="btnSearch" min="-2" pref="88" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="lblNicNum" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
-                                          <Component id="lblStuName" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
                                           <Component id="lblPrfMarks" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
                                           <Component id="lblNewPrfMarks" min="-2" pref="151" max="-2" attributes="0"/>
                                       </Group>
@@ -48,7 +47,6 @@
                                           <Group type="102" attributes="0">
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="txtStuName" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
                                                   <Component id="txtStudentID" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
                                                   <Component id="txtNicNum" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
                                               </Group>
@@ -63,6 +61,11 @@
                                       </Group>
                                   </Group>
                                   <Component id="btnBack" min="-2" pref="61" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="lblStuName" min="-2" pref="41" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                                      <Component id="txtStuName" min="-2" pref="195" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>

@@ -40,33 +40,36 @@
                                               <Component id="btnSearch" min="-2" pref="88" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="lblNicNum" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
-                                          <Component id="lblStuName" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
-                                          <Component id="lblPrfMarks" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
-                                          <Component id="lblNewPrfMarks" min="-2" pref="151" max="-2" attributes="0"/>
+                                          <Component id="lblPrfMarks" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
+                                          <Component id="lblNewPrfMarks" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="txtStuName" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
                                                   <Component id="txtStudentID" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
                                                   <Component id="txtNicNum" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="txtPrfMarks" min="-2" pref="74" max="-2" attributes="0"/>
-                                                  <Component id="txtNewPrfMarks" min="-2" pref="74" max="-2" attributes="0"/>
+                                                  <Component id="txtDBmsMarks" min="-2" pref="74" max="-2" attributes="0"/>
+                                                  <Component id="txtNewDbmsMarks" min="-2" pref="74" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
                                   </Group>
                                   <Component id="btnBack" min="-2" pref="61" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="lblStuName" min="-2" pref="41" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                                      <Component id="txtStuName" min="-2" pref="192" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -93,15 +96,15 @@
                   <Component id="lblNicNum" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtNicNum" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="lblPrfMarks" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtPrfMarks" alignment="1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblPrfMarks" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtDBmsMarks" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblNewPrfMarks" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="txtNewPrfMarks" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNewDbmsMarks" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnBack" min="-2" pref="12" max="-2" attributes="0"/>
@@ -181,12 +184,12 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="sansserif" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="PRF Marks"/>
+        <Property name="text" type="java.lang.String" value="DBMS Marks"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtPrfMarks">
+    <Component class="javax.swing.JTextField" name="txtDBmsMarks">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPrfMarksActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDBmsMarksActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNicNum">
@@ -199,12 +202,12 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="sansserif" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Enter New PRF Marks"/>
+        <Property name="text" type="java.lang.String" value="Enter New DBMS Marks"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtNewPrfMarks">
+    <Component class="javax.swing.JTextField" name="txtNewDbmsMarks">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNewPrfMarksActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNewDbmsMarksActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
