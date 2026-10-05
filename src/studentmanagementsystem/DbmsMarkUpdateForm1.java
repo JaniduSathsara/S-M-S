@@ -217,9 +217,10 @@ public class DbmsMarkUpdateForm1 extends javax.swing.JFrame {
         String userInputRegID = txtStudentID.getText();
         for (Students studentsArray : StudentCollection.studentsArray) {
             if (studentsArray.getStudentId().equals(userInputRegID)) {
-                studentsArray.setPrfMarks(Integer.parseInt(txtDBmsMarks.getText()));
+                studentsArray.setDbmsMarks(Integer.parseInt(txtDBmsMarks.getText()));
                 txtNewDbmsMarks.setText(txtNewDbmsMarks.getText());
                 txtDBmsMarks.setText(null);
+                txtDBmsMarks.setText(txtNewDbmsMarks.getText());
                 JOptionPane.showMessageDialog(null, "Successfully Updated "+studentsArray.getStudentId());
                 break;
             }
