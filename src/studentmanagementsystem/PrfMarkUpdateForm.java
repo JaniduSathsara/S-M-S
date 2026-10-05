@@ -214,6 +214,7 @@ public class PrfMarkUpdateForm extends javax.swing.JFrame {
                 studentsArray.setPrfMarks(Integer.parseInt(txtPrfMarks.getText()));
                 txtNewPrfMarks.setText(txtNewPrfMarks.getText());
                 txtPrfMarks.setText(null);
+                txtPrfMarks.setText(txtNewPrfMarks.getText());
                 JOptionPane.showMessageDialog(null, "Successfully Updated "+studentsArray.getStudentId());
                 break;
             }
