@@ -4,12 +4,14 @@
  */
 package studentmanagementsystem;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Janidu
  */
 public class StuRegistrationReportForm extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(StuRegistrationReportForm.class.getName());
 
     /**
@@ -17,6 +19,7 @@ public class StuRegistrationReportForm extends javax.swing.JFrame {
      */
     public StuRegistrationReportForm() {
         initComponents();
+
     }
 
     /**
@@ -35,6 +38,7 @@ public class StuRegistrationReportForm extends javax.swing.JFrame {
         btnBackToHome = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        btnReload = new javax.swing.JButton();
 
         tblStudentReport.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -70,17 +74,17 @@ public class StuRegistrationReportForm extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "No", "Registration Number", "Student Name", "Student NIC", "PRF Marks", "DBMS Marks", "GPA"
+                "Registration Number", "Student Name", "Student NIC", "PRF Marks", "DBMS Marks", "GPA"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Double.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Double.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -88,6 +92,9 @@ public class StuRegistrationReportForm extends javax.swing.JFrame {
             }
         });
         jScrollPane2.setViewportView(jTable1);
+
+        btnReload.setText("Reload");
+        btnReload.addActionListener(this::btnReloadActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -102,7 +109,9 @@ public class StuRegistrationReportForm extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(15, 15, 15)
-                                .addComponent(btnBackToHome, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnBackToHome, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(325, 325, 325)
+                                .addComponent(btnReload))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 918, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 8, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -113,10 +122,15 @@ public class StuRegistrationReportForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(btnBackToHome, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnBackToHome, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnReload)
+                        .addGap(22, 22, 22)))
                 .addComponent(jLabel3)
                 .addContainerGap())
         );
@@ -130,6 +144,27 @@ public class StuRegistrationReportForm extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_btnBackToHomeActionPerformed
 
+    private void btnReloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReloadActionPerformed
+        DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
+        dtm.setRowCount(0); 
+
+        for (int i = 0; i < StudentCollection.studentsArray.length - 1; i++) {
+            for (int j = 0; j < StudentCollection.studentsArray.length - 1 ; j++) {
+                if (StudentCollection.studentsArray[j].getPrfMarks() > StudentCollection.studentsArray[j + 1].getPrfMarks()) {
+                    Students temp = StudentCollection.studentsArray[j];
+                    StudentCollection.studentsArray[j] = StudentCollection.studentsArray[j + 1];
+                    StudentCollection.studentsArray[j + 1] = temp;
+                }
+            }
+        }
+        for (int i = 0; i < StudentCollection.studentsArray.length; i++){
+            Students student = StudentCollection.studentsArray[i];
+            Object[] rowData = {student.getStudentId(), student.getStuName(), student.getStuNic(), student.getPrfMarks(), student.getDbmsMarks()};
+            dtm.addRow(rowData);
+        }
+
+    }//GEN-LAST:event_btnReloadActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -137,7 +172,7 @@ public class StuRegistrationReportForm extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -157,6 +192,7 @@ public class StuRegistrationReportForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBackToHome;
+    private javax.swing.JButton btnReload;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;

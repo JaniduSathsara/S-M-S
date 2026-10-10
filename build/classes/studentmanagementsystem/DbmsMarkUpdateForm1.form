@@ -34,12 +34,13 @@
                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
+                                      <Component id="btnSearch" min="-2" pref="88" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="txtStudentID" min="-2" pref="187" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lblStuName" min="-2" pref="41" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-                                              <Component id="txtStuName" min="-2" pref="192" max="-2" attributes="0"/>
-                                          </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="lblNicNum" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
@@ -60,14 +61,13 @@
                                                   </Group>
                                               </Group>
                                           </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="lblStuName" min="-2" pref="41" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                                              <Component id="txtStuName" min="-2" pref="192" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace pref="18" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="btnSearch" min="-2" pref="88" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="txtStudentID" min="-2" pref="187" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -180,6 +180,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtStuName">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtStuNameActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblStuName">
       <Properties>

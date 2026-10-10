@@ -65,6 +65,8 @@ public class DbmsMarkUpdateForm1 extends javax.swing.JFrame {
 
         txtStudentID.addActionListener(this::txtStudentIDActionPerformed);
 
+        txtStuName.addActionListener(this::txtStuNameActionPerformed);
+
         lblStuName.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         lblStuName.setText("Name");
 
@@ -101,11 +103,12 @@ public class DbmsMarkUpdateForm1 extends javax.swing.JFrame {
                                 .addGap(8, 8, 8)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtStudentID, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(28, 28, 28))
+                                    .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(lblStuName, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(117, 117, 117)
-                                                .addComponent(txtStuName, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(lblNicNum, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -119,13 +122,12 @@ public class DbmsMarkUpdateForm1 extends javax.swing.JFrame {
                                                         .addGap(45, 45, 45)
                                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                             .addComponent(txtDBmsMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addComponent(txtNewDbmsMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtStudentID, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(28, 28, 28))))
+                                                            .addComponent(txtNewDbmsMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(lblStuName, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(57, 57, 57)
+                                                .addComponent(txtStuName, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -222,10 +224,17 @@ public class DbmsMarkUpdateForm1 extends javax.swing.JFrame {
                 txtDBmsMarks.setText(null);
                 txtDBmsMarks.setText(txtNewDbmsMarks.getText());
                 JOptionPane.showMessageDialog(null, "Successfully Updated "+studentsArray.getStudentId());
+                txtNewDbmsMarks.setText(null);
+                txtNewDbmsMarks.setVisible(false);
+                lblNewPrfMarks.setVisible(false);
                 break;
             }
         }
     }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void txtStuNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStuNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtStuNameActionPerformed
 
     /**
      * @param args the command line arguments
