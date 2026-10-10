@@ -105,7 +105,8 @@ public class StuRegistrationReportForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(15, 15, 15)
@@ -113,7 +114,7 @@ public class StuRegistrationReportForm extends javax.swing.JFrame {
                                 .addGap(325, 325, 325)
                                 .addComponent(btnReload))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 918, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 8, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -121,9 +122,9 @@ public class StuRegistrationReportForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 18, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnBackToHome, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -150,7 +151,7 @@ public class StuRegistrationReportForm extends javax.swing.JFrame {
 
         for (int i = 0; i < StudentCollection.studentsArray.length - 1; i++) {
             for (int j = 0; j < StudentCollection.studentsArray.length - 1 ; j++) {
-                if (StudentCollection.studentsArray[j].getPrfMarks() > StudentCollection.studentsArray[j + 1].getPrfMarks()) {
+                if (StudentCollection.studentsArray[j].getStuName().compareTo(StudentCollection.studentsArray[j + 1].getStuName()) > 0) {
                     Students temp = StudentCollection.studentsArray[j];
                     StudentCollection.studentsArray[j] = StudentCollection.studentsArray[j + 1];
                     StudentCollection.studentsArray[j + 1] = temp;
@@ -159,7 +160,7 @@ public class StuRegistrationReportForm extends javax.swing.JFrame {
         }
         for (int i = 0; i < StudentCollection.studentsArray.length; i++){
             Students student = StudentCollection.studentsArray[i];
-            Object[] rowData = {student.getStudentId(), student.getStuName(), student.getStuNic(), student.getPrfMarks(), student.getDbmsMarks()};
+            Object[] rowData = {student.getStudentId(), student.getStuName(), student.getStuNic(), student.getPrfMarks(), student.getDbmsMarks(),StudentCollection.makeGpaValue(student)};
             dtm.addRow(rowData);
         }
 

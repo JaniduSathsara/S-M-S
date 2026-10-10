@@ -14,6 +14,7 @@ public class Students {
     private String StuName;
     private int dbmsMarks;
     private int prfMarks;
+    private double gpaVaule;
 
     public Students(String studentId,String stuNic,String StuName,int dbmsMarks,int prfMarks){
         this.studentId = studentId;
@@ -21,6 +22,7 @@ public class Students {
         this.StuName = StuName;
         this.dbmsMarks = dbmsMarks;
         this.prfMarks = prfMarks;
+        this.gpaVaule = gpaVaule;
     }
 
     Students(String id, String name) {
@@ -41,6 +43,9 @@ public class Students {
     public int getPrfMarks() {
         return prfMarks;
     } 
+    public double getGpaValue() {
+        return gpaVaule;
+    }
 
     public void setStudentId(String studentId) {
         this.studentId = studentId;
@@ -57,5 +62,7 @@ public class Students {
     public void setPrfMarks(int prfMarks) {
         this.prfMarks = prfMarks;
     }
-    
+    public void setGpaValue(double gpaVaule){
+    this.gpaVaule = gpaVaule;
+    }
 }
